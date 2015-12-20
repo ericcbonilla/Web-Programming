@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Exercise 1A on Sizes - ems and px</title>
+<style>
+* {
+	padding: 0px;
+    margin: 0px;
+}
+#outer {
+	background-color: beige;
+	font-size: 20px;
+}
+#box_1 { 
+	background-color:red;
+}
+#box_1 p {
+	/* font-size should be set in ems. It should be the same size as its parent */
+	color: white;
+	font-size: 1em;
+}
+#box_2 { 
+	background-color:green;
+}
+#box_2 p {
+	/* font-size should be set in ems. It should be the twice the size of its parent */
+	color: white;
+
+	font-size: 2em;
+}
+#box_3 { 
+	/* font-size should be same size as its parent */
+	background-color:blue;
+
+	font-size: 1em;
+}
+#box_4  {
+	background-color:aqua;
+}	
+#box_4 p {
+	/* font-size should be set in ems. It should be the 0.8 size of its parent */
+
+	font-size: 0.8em;
+}
+</style>
+</head>
+<body>
+<div id="outer">
+	<p> This is text in outer box. </p>
+
+	<div id="box_1">
+		<p> This is text in red box. </p>
+	</div> <!-- end of div box_1 -->
+
+	<div id="box_2">
+		<p> This is text in green box. </p>
+
+		<div id="box_3">
+			<p> This is text in blue box. </p>
+		</div> <!-- end of div box_3 -->
+
+	</div> <!-- end of div box_2 -->
+
+	<div id="box_4">
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+ Duis autem vel eum iriure dolor in hendrerit in vulputate ilisi. 
+ Nam liber tempor cum soluta nobis eleifend option congue nihil 
+ imperdiet doming id quod mazim placerat facer possim assum. 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+ suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+ Duis autem vel eum iriure dolor in hendrerit in vulputate ilisi. 
+ Nam liber tempor cum soluta nobis eleifend option congue nihil 
+ imperdiet doming id quod mazim placerat facer possim assum. 
+	</p>
+	</div> <!-- end of div box_4 -->
+</div> <!-- end of outer div -->
+
+</body>
+</html>

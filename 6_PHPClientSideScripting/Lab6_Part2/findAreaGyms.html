@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Find Area Gyms</title>
+<script type="text/javascript">
+       
+		function checkFormData(){
+			// Calls the appropriate functions and Checks 
+			// if the fields are filled and data is valid
+			// Returns a true or false
+			if (filledOk() && isValid()){
+				alert ("Data is valid");
+				return true;
+			}
+			else{
+				alert ("Data Not Valid");
+				return false;
+			}			
+		}
+		function isValid(){
+			// Returns true if input contains only digits.
+			var areaCode = document.getElementById("areacode");
+			// Uses the regex to describe the pattern where the area code 
+			// should consist of exactly 3 digits.
+			// Modify the regular expression below to match exactly 3 digits
+			
+			var pattern = /[0-9]+/;
+			
+			var valid = false;
+			if (areaCode){			
+				var areaCodeValue = areaCode.value;				
+				if (areaCodeValue.match(pattern)){
+					valid = true;
+				}
+				return valid;
+			}
+		}
+		function filledOk(){
+			// Returns true if the field is filled.
+			// Otherwise returns false			
+			var ok = true;			
+			var areaCode = document.getElementById("areacode");
+			if (areaCode){			
+				if (areaCode.value.length == 0){
+					alert("No Area code given");
+					areaCode.focus();
+					ok = false;
+				}
+			}
+			return ok;			
+		}		
+      </script>
+
+</head>
+<body>
+<h1>Excercise Centers and Gyms in the area codes below</h1>
+<h2> Area Code options </h2>
+<ul>
+<li> 408 </li>
+<li> 510 </li>
+<li> 415 </li>
+</ul>
+<form id="form1" name="form1" onsubmit="return checkFormData()" method="post" 
+action="none">
+<p>
+Area Code: <input type="text" id="areacode" name="areacode" size="15"/> 
+</p>
+<hr />
+<input type="submit" value="Find A Gym"  />
+<input type="reset" value="clear" />
+</form>
+</body>
+</html>
+

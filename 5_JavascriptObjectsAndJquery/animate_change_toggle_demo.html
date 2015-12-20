@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head> <title>Animate - CSS - toggle</title> 
+<style> 
+#block1 {display: block;position: absolute; 
+top: 100px; left: 200px; font: 24px arial;
+width: 200px; height: 200px; background-color: red; color: white;
+}
+#block2 {display: block;position: absolute; 
+top: 100px; left: 700px; font: 24px arial;
+width: 200px; height: 200px; background-color: blue; color: white;
+}
+#up #down #color #disappear {padding: 5px;}
+</style> 
+ <script type='text/javascript' src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head> 
+<body>  
+	<button id="up">Move Up</button>
+	<button id="down">Move Down</button>
+	<button id="color">Change Color</button>
+	<button id="disappear">Disappear/Re-appear</button>     	
+	<div id="block1">Hello</div> 
+	<div id="block2">Good-bye</div> 
+<script> 
+	$(document).ready(function() {
+		$("#up").click( function() {
+				$("#block1").animate({top:30},200);
+		});//end up
+		$("#down").click( function() {	
+				$("#block1").animate({top:500},2000);  
+		});//end down
+		$("#color").click( function() {
+				$("#block1").css("color", "black");	
+				$("#block1").css("background-color", "yellow");	
+		});//end color
+		$("#disappear").click( function() {
+				$("#block1").toggle('slow'); 
+		});//end disappear
+	});//end doc ready
+</script> 
+</body> 
+</html>

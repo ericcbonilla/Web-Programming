@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="utf-8"/>
+<title>My Plane gallery</title>
+<style type = "text/css">
+div {
+	width: 600px;border: 2px solid blue;
+	background-color: lightgray;
+	margin:auto;
+	}
+img {display: block; margin: auto;}
+
+h2 {
+	text-align:center;
+}
+h4 {
+	text-align:center;
+}
+</style>
+
+<script type="text/javascript">
+var pics = ["redplane.jpg","blueplane.jpg","greenplane.jpg","toyplane.jpg"];
+
+// Declare a global variable cnt and initialize it with -1	
+var cnt = -1;
+var imagePath = "images/";
+
+function planes(){	
+		// increment cnt
+		++cnt;
+		// Write an if statement to set the cnt to 0, if cnt >= pics.length
+		if (cnt >= pics.length) {
+			cnt = 0;
+		}
+		
+		// Create picFullName by concatenating pics[cnt] to imagePath
+		var picFullName = imagePath.concat(pics[cnt]);
+		
+		// Create picName which is the picture name with the extension removed.
+		var end = pics[cnt].length - 4;
+
+		// For example, the picName for toyplane.jpg is toyplane
+
+
+		// Use substring method to get just the picName
+		
+		var picName = pics[cnt].substring(0, end);
+		document.getElementById("pictitle").innerHTML = picName;
+		
+		document.getElementById("pic").src = picFullName;
+		
+		document.getElementById("ins").innerHTML = "Click picture to see Next";
+}
+</script>
+</head>
+<body>
+<div>
+<h2 id="pictitle"> My Plane Collection </h2>
+<img id="pic" src="images/welcome_bob.png" alt="welcome" style="cursor:pointer;" onclick="planes();"/>
+<h4 id="ins"> Click me to see my plane collection </h4>
+</div>
+</body>
+</html>

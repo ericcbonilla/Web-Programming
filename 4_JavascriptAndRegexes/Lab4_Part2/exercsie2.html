@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Exercise 2 - Regex</title>	
+	<script type="text/javascript"> 
+	
+	// Exercise 2
+	var pattern = /^report[2-4]$/;  // report followed by 2, 3 or 4
+	var text = "report27";
+	
+	var result = text.match(pattern);
+	if (result != null) // if there is a match
+	{			
+		alert (text +" matches the pattern /report[2-4]/");		// What do you see? "report2 matches the pattern report[2-4]/"
+	}
+	else{
+		alert ("No Match");
+	}
+	
+
+	</script>
+	
+   </head>
+ <body>
+
+</body></html>

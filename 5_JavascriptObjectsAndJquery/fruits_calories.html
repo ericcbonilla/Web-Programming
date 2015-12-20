@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>A dynamic food list</title>
+</style>	
+<script>
+var totalCalories = 0;	// A global variable to hold the total calories
+var fruits = [
+				{"name":"apple",
+				"type": "fruit",
+				 "calories": 100
+				 },				
+				 {"name":"pear",
+				"type": "fruit",
+				 "calories": 80
+				 },				
+				 {"name":"papaya",
+				"type": "fruit",
+				 "calories": 150
+				 },
+				 {"name":"banana",
+				"type": "fruit",
+				 "calories": 110
+				 },
+				 {"name":"strawberry",
+				"type": "fruit",
+				 "calories": 20
+				 }
+				];
+
+function showFruitList(){
+	// This is where a list of radio button group for the elements in the 
+	// fruits[] will be added.
+	var whereToAdd = document.getElementById("div2");	
+	// Check if already an unordered list is present. If so remove it.
+	removeFruitNode(whereToAdd);
+	
+	// Firstly, create an unordered list of items
+	var ulist = document.createElement("ul");
+	ulist.className = 'choices';
+	ulist.setAttribute('id','fruit_choices');
+	// Create each choice of fruit	
+	for (var i = 0; i < fruits.length; ++i){
+		// create a radio button for each fruit
+		var choice = document.createElement("input");
+		choice.className = 'ch';
+		choice.setAttribute('type','radio');
+		choice.setAttribute('id','id'+i);
+		choice.setAttribute('name','fruit');
+		choice.setAttribute('value',fruits[i].name);
+		
+		//Add the choice to the UL element
+		ulist.appendChild(choice);
+		
+		// Create a Label
+		var fruitLabel = document.createElement("label");  
+		fruitLabel.htmlFor = choice.id;  
+		fruitLabel.appendChild(choice); 
+		var fruitNameTextNode = document.createTextNode(fruits[i].name);
+		fruitLabel.appendChild(fruitNameTextNode);  
+
+		// Add the UL item to the unordered list
+		ulist.appendChild(fruitLabel);
+		// Add a break element
+		var brElement = document.createElement("br");
+		ulist.appendChild(brElement);
+	}
+	//At this point, the entire unordered list of items is created.
+	//Add the unordered list to the div.
+	whereToAdd.appendChild(ulist);
+	
+	// Attach the event handlers on each item selected	
+	var list = document.getElementsByName('fruit');
+    if (! list){
+		alert("No list");
+        return;
+	}
+    for (var i = 0; i < list.length; ++i){
+            list[i].onclick = getCalories;
+	}
+ }
+function searchInFruitsArray(fruitName){
+	for (var i = 0; i < fruits.length; ++i){
+		var fruitObject = fruits[i];
+		if (fruitObject.name === fruitName)
+			return fruitObject.calories;	
+	}
+	return -1;
+} 
+function getCalories(){ 
+	var elements = document.getElementsByName('fruit');
+	var selectedChoice = "";
+	var calories = 0;
+    for (var i = 0;i < elements.length; i++){
+        if (elements[i].checked){
+			selectedChoice = elements[i].value;
+			// Search for this name in the fruits array
+			calories += searchInFruitsArray(selectedChoice);
+			// Adjust the total calories
+			totalCalories += calories;
+			break;
+        }
+    }
+	alert (selectedChoice+": "+calories);
+}
+function showTotalCalories(){
+	alert(totalCalories);
+}
+function registerHandlers(){
+	document.getElementById("fruit").onclick = showFruitList;
+	document.getElementById("calories").onclick = showTotalCalories;	
+}
+function removeFruitNode(parent){
+	var elem = document.getElementById("fruit_choices");
+	if (elem != null){
+		parent.removeChild(elem);
+	}	
+}
+ </script>
+</head>
+<body onload="registerHandlers()"> 
+<div id="div1">
+ <h1 id="p1">Calorie-Counter</h1>
+ </div>
+<div id="div2">
+<h2>Select fruits of your choice</h2>
+</div>
+<button type="button" id="fruit"> Show Fruits</button>
+<button type="button" id="calories">Show Total Calories</button>
+
+</body>
+</html>
+

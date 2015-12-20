@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Validating fields</title>
+      
+	<script type = "text/javascript">
+      function checkStudentId()
+	  {
+		// retrieve the value entered for student id
+		var studentId = document.getElementById("stid").value;
+		if (studentId == "") {// a value is not entered
+			alert ("Enter a value for Student id");
+			document.getElementById("stid").focus();
+		}
+		// Assume that a valid Student is a string of 9 digits
+		// with 4 0s followed by any other 5 digits.
+
+		var formatPattern = /^0{4}\d{5}$/;
+		if (studentId.match(formatPattern)){
+			alert ("Format  OK");
+			return true;
+		}
+		else {
+			alert ("Invalid Format. Re-enter correctly.");
+			document.getElementById("stid").focus();
+			return false;
+		}
+	  }	  
+    </script>
+</head>
+<body >
+<h3>Form Validations</h3>
+<form action="#">
+<fieldset>
+<legend> Student Id </legend>
+
+<p><label for="stid">StudentId</label> <input type="text" id="stid" name="stid" size="12"/> 
+	<input type="button" onclick="checkStudentId()" value="Check" /> 
+</p>
+<p> <label> A valid student id starts with 4 zeros followed by any 5 digits (0-9).</label>
+
+</p>
+</fieldset>	
+</form>
+</body>
+</html>

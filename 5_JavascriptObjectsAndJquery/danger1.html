@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Danger2</title>
+	<style type="text/css">
+		#tig {
+			position: relative;
+			left:50px;
+			top: 0px;			
+		}
+	</style>
+	 <script type='text/javascript' src="http://code.jquery.com/jquery-latest.min.js"></script>	 
+	<script type='text/javascript'>
+	
+	$(document).ready(function() {  
+		$('#danger').click(function() {
+			$('#one').show();			
+		});		
+	}); 
+	</script>
+  </head>
+  <body>
+	<div id="one" style="height:200px;background-color:beige;display:none">
+	<img id="tig" src="tiger.gif" alt="tiger" />
+	</div>
+	<div id="two" style="width:100px;background-color:gray">
+	<form action="none">
+		<input type="button" id="danger" value="Danger" />
+	</form> 
+	</div>
+	
+	
+  </body>
+</html>

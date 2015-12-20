@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html><head> <title>Animation Exercise 1</title> 
+<style> 
+#block1 {display: block;position: absolute; 
+top: 100px; left: 200px; font: 24px arial;
+width: 200px; height: 200px; background-color: red; color: white;
+}
+#block2 {display: block;position: absolute; 
+top: 100px; left: 700px; font: 24px arial;
+width: 200px; height: 200px; background-color: blue; color: white;
+}
+
+</style> 
+ <script type='text/javascript' src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head> 
+<body>  
+	<button id="up">Move Up</button>
+	<button id="down">Move Down</button>
+	<div id="block1">Hello</div> 
+	<div id="block2">Good-bye</div> 
+<script> 
+	$(document).ready(function() {
+		$("#up").click( function() {
+				// animate with two parameters - CSS property object and duration
+				$("#block1").animate({top:30},200);
+				$("#block2").animate({top:500},200);
+
+				
+		});//end up
+		$("#down").click( function() {
+				// animate with two parameters - CSS property object and duration
+				$("#block1").animate({top:500},200);
+				$("#block2").animate({top:30},200);  
+
+		});//end down
+		
+	});//end doc ready
+</script> 
+</body> 
+</html>

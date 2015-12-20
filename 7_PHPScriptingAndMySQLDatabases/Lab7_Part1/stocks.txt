@@ -1,0 +1,6 @@
+StarSystems:ssy:100
+Megawat:mg:300
+Neta:nt:150
+Entropy:ent:50
+Metamagic:mm:200
+Voyage:vg:80

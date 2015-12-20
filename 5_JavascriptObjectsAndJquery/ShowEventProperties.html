@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Event Object and its properties</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script>	
+	function showEventProperties(event){
+		// Browsers which follow W3C standards always pass the event object 
+		// as the first argument for the handler.
+		// You can access a number of properties of the event object
+		
+		// Get the id of the element where the event originated.
+		
+		var message= event.srcElement.id;
+		
+		
+		//  clientX and clientY are the values (in px) of the current mouse position relative to 
+		// the current viewport boundaries.If you scroll the current Document, the window (viewport) 
+		// remains the same.
+		// pageX and pageY are the values (in px) of the current mouse position relative to the Document.
+		// If you scroll the current Document, you'll get the values relative to the Document most 
+		// top border and most left border.
+		
+		message = message +"<br/>"+"clientX: " + event.clientX + ", clientY: " + event.clientY + "<br />";
+		message = message +"<br/>"+"pageX: " + event.pageX + ", pageY: " + event.pageY + "<br />";
+		var info = document.getElementById ("displaybox");
+        info.innerHTML = message;
+		event.stopPropagation();
+	}	
+	function registerHandlers(event){
+		// Browsers which follow W3C standards always pass the event object 
+		// as the first argument for the handlers
+		
+		document.getElementById("one").onclick = showEventProperties;
+		document.getElementById("two").onclick = showEventProperties;
+		document.getElementById("container").onclick = showEventProperties;;
+	}
+</script>
+<head>
+<body onload="registerHandlers();">
+<div id="container">
+<div id="one">
+Div One
+</div>
+<div id="two">
+Div Two
+<img id="img1" src="tiger.gif" />
+</div>
+</div>
+
+<div id="displaybox">
+<h4> Click on the colored blocks </h4>
+</div>
+
+</body>
+
+</html>

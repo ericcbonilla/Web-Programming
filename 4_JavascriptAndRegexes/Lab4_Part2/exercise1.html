@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Exercise 1 - Regex</title>
+	<script type="text/javascript"> 
+	
+	// Exercise 1 
+	var pattern = /[a-z]+[0-9]+/g;  // one or more of lowercase letters followed by 1 or more of
+									// digits
+	var text = "Run it on Windows7 or Windows8.";
+	
+	var result = text.match(pattern);
+	if (result != null) // if there is a match
+	{			
+		alert (result);		// What do you see?		indows7,indows8
+	}
+
+	// Now change the text to the following line:
+	var text = "Windows 7 or Windows 8"; // Note there is a space bewteen Windows and 7 (and 8)
+	
+	var pattern = /[a-z]+[\s]+[0-9]+/g;
+	
+	
+	var result = text.match(pattern);
+	if (result != null) 
+	{			
+		alert (result);		
+	}
+	
+	// Does the text match the regex?
+	
+    // If not, rewrite the regex to match the text.
+	
+	// To write a regex to match one or more letters or digits, the pattern to use
+	// is [a-zA-Z0-9]+. There is a short cut, you can use \w for a word character (letters, 
+	// digits or underscore). Refer to the table given to check the meaning of the regex
+	// metacharacters.
+	
+	// We want to match a user name that is a string of at least length 3 and at most of 16 characters,
+	// where a character can be a letter, digit or an underscore. ^ and $ represent the beginning and
+	// end of string.
+	
+	pattern = /^a-zA-Z0-9_]{3,16}$/;   
+	
+	var username = "eric3"; // here give an username of your choice
+	
+	result = username.match(pattern);
+	if (result != null) // if there is a match
+	{			
+		alert ("username is in correct format");		
+	}
+	else{
+		alert ("username iINCORRECT format");		
+	
+	}
+	
+	// Can you rewrite the pattern /^a-zA-Z0-9_]{3,16}$/ using \w?
+	// Test your pattern with an username of your choice.
+	
+	
+	
+	</script>
+	
+   </head>
+ <body>
+
+</body></html>

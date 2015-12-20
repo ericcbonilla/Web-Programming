@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head> 
+<meta charset="utf-8"/>
+<title>Find max</title>
+</head>
+<body>
+
+<script type="text/javascript">
+// Prompt the user to input 3 numbers
+		var input1 = window.prompt("Enter the first number","0");
+		var input2 = window.prompt("Enter the first number","0");
+		var input3 = window.prompt("Enter the first number","0");
+		
+		// The user entered value is read in as strings.
+		// Convert them to numbers
+		
+		var value1 = parseFloat(input1);
+		var value2 = parseFloat(input2);
+		var value3 = parseFloat(input3);
+		
+		var maxValue = findMax(value1,value2,value3);
+		
+		document.writeln("<h2> Max of "+value1 +", "+value2+" and "+value3 +" is "+maxValue +"</h2>");
+	
+		// function findMax
+		function findMax(x,y,z){
+		
+			return Math.max(z,Math.max(x,y));
+		}
+	
+		
+</script>
+
+<body> </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Danger 1</title>
+	<style type="text/css">
+		#one img {
+			position: relative;
+			left:100px;
+			top: 0px;		
+		}
+	</style>
+	 <script type='text/javascript' src="http://code.jquery.com/jquery-latest.min.js"></script>	 
+	<script type='text/javascript'>
+	
+	$(document).ready(function() {  
+		$('#danger').click(function() {
+			$('#one').css('visibility','visible');
+			
+		});		
+	}); 	
+	</script>
+  </head>
+  <body>
+	<div id="one" style="height:200px;background-color:beige;visibility:hidden">
+	<img id="tig" src="tiger.gif" alt="tiger" />
+	</div>
+	<div id="two" style="width:100px;background-color:gray">
+	<form action="none">
+		<input type="button" id="danger" value="Danger" />
+	</form> 
+	</div>
+	
+	
+  </body>
+</html>

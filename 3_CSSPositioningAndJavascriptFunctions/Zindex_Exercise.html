@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Z-index Exercise </title>	
+    <style type="text/css" >
+	#container {
+		width:600px;
+		margin-top:10px;
+		margin-left:auto;
+		margin-right:auto;
+		position:relative;
+	}	
+	#pic1 { 
+       position: absolute;
+	   top: 170px;
+	   left: 100px;
+	   border: 1px solid red;
+	   z-index: -30;
+	}
+	#pic2 {
+       position: absolute;
+	   top: 120px;
+	   left: 250px;
+	   border: 1px solid red;
+	   z-index: 20;
+	}
+	#pic3 {
+	   position: absolute;
+	   top: 250px;
+	   left: 150px;
+	   border: 1px solid red;
+	   z-index: 10;
+	}	
+	</style>
+	
+</head>
+
+<body >
+	<div id="container">
+		<div class="box" id="pic1">
+			<img src="bricks.jpg" alt="bricks"/>	
+		</div>
+		<div class="box" id="pic2"><img src="happyBlue.jpg" alt="happy"/></div>
+		<div class="box" id="pic3"><img src="thoughtful.jpg" alt="thoughtful"/></div> 
+	</div>
+</body>
+</html>
